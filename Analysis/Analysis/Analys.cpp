@@ -94,24 +94,6 @@ int _tmain(int argc, _TCHAR* argv[])
 			endPoint = i;
 		}
 	}
-	//логарфмируем амлитуды и переместим начало координат для МНК
-	double shiftTime = res[0].time;
-	double shiftAmp = log(res[0].amp);
-	for (int i = 0; i < endPoint; i++)
-	{
-		res[i].time -= shiftTime;
-		res[i].amp = log(res[i].amp)-shiftAmp;
-	}
-	//собственно, МНК
-	double MHKresult;
-	double tempChisl(0);
-	double tempZnam(0);
-	for (int i = 0; i < endPoint; i++)
-	{
-		tempChisl += res[i].amp*res[i].time;
-		tempZnam += res[i].time*res[i].time;
-	}
-	MHKresult = tempChisl / tempZnam;
 
 	///Продолжаем вывод
 	cout << "DEADPOINT NUMBER (WARNING, FLUCTUATION MAY OCCUR) :" << endPoint << endl; //òî÷êà, â êîòîðîé íà÷èíàåòñÿ àïåðèîäè÷íîñòü
@@ -121,9 +103,6 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	cout << "LOGARYTHMIC DECREMENT CALCULATED WITH FIRST TWO AMPLITUDES: " << decRaw << endl;
 	out << "LOGARYTHMIC DECREMENT CALCULATED WITH FIRST TWO AMPLITUDES: " << decRaw << endl;
-
-	cout << "NON-LOGARYTHMIC DECREMENT CALCULATED WITH MHK " << MHKresult << endl;
-	out << "NON-LOGARYTHMIC DECREMENT CALCULATED WITH MHK " << MHKresult << endl;
 
 	cout << "NON-LOGARYTHMIC DECREMENT CALCULATED WITH FIRST TWO AMPLITUDES: " << -decRaw / (res[1].time - res[0].time) << endl;
 	out << "NON-LOGARYTHMIC DECREMENT CALCULATED WITH FIRST TWO AMPLITUDES: " << -decRaw / (res[1].time - res[0].time) << endl;
