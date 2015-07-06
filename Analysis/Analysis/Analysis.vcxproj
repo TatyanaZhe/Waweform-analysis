@@ -10,6 +10,16 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Analys.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="struct.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="struct.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{87C305E0-94A7-4071-9194-2E91268C64F6}</ProjectGuid>
     <RootNamespace>Analysis</RootNamespace>
@@ -63,16 +73,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="C:\Users\User\Desktop\src\Analys.cpp" />
-    <ClCompile Include="C:\Users\User\Desktop\src\stdafx.cpp" />
-    <ClCompile Include="C:\Users\User\Desktop\src\struct.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="C:\Users\User\Desktop\src\stdafx.h" />
-    <ClInclude Include="C:\Users\User\Desktop\src\struct.h" />
-    <ClInclude Include="C:\Users\User\Desktop\src\targetver.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
